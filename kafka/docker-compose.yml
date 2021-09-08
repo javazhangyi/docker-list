@@ -3,7 +3,7 @@ services:
   zookeeper:
     image: wurstmeister/zookeeper
     ports:
-      - "2181:2181"                 ## 对外暴露的端口号
+      - "2181:2181"
   kafka:
     image: wurstmeister/kafka
     volumes:
@@ -23,6 +23,6 @@ services:
   kafka-manager:
     image: sheepkiller/kafka-manager
     environment:
-      ZK_HOSTS: 182.92.217.111                   ## 修改:宿主机IP
+      ZK_HOSTS: 127.0.0.1
     ports:
-      - "9001:9000"                                 ## 暴露端口
+      - "9001:9001"
