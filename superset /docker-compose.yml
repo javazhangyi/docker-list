@@ -1,0 +1,9 @@
+docker pull amancevice/superset
+
+mkdir -p /Users/mac/data/superset/conf & mkdir -p /Users/mac/data/superset/data
+
+docker run --name superset -u 0 -d -p 8088:8088 -v /Users/mac/data/superset/conf:/etc/superset -v /Users/mac/data/superset/data:/var/lib/superset amancevice/superset
+
+
+
+https://blog.csdn.net/xixingzhe2/article/details/106503829
