@@ -1,0 +1,14 @@
+docker-compose 相关命令 参考：https://blog.csdn.net/weixin_34789114/article/details/108291784
+
+启动服务
+    docker-compose -f docker-compose.yml up -d
+
+停止服务
+    docker-compose -f docker-compose.yml stop
+
+停止并删除
+    docker-compose -f docker-compose.yml down
+
+
+
+

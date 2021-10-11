@@ -1,0 +1,81 @@
+18610809793
+a1234567
+
+
+hbase(main):012:0>
+
+scan 'stu',{FILTER => "ColumnPrefixFilter('name') AND (ValueFilter(=,'substring:1') OR ValueFilter(=,'substring:3'))"}
+
+scan 'stu',{FILTER => "(QualifierFilter (<,'binary:name')) AND (QualifierFilter (=,'substring:jack3'))"}
+
+
+hbase(main):018:0>
+
+
+
+
+scan 'gaotu_c_arch:footprint',FILTER => "FirstKeyOnlyFilter() AND ValueFilter(=,'binary:jack2') ()"
+
+
+
+
+scan 'stu',FILTER => "FirstKeyOnlyFilter() AND ValueFilter(=,'binary:jack2') AND KeyOnlyFilter()"
+
+
+
+scan 'stu',{COLUMNS => ['base:name'] , FILTER=>" (ValueFilter(=,'substring:1') OR ValueFilter(=,'substring:3'))" }
+
+
+
+
+SingleColumnValueFilter('i', 'al', =, 'binary:4')
+
+
+get 'gaotu_c_arch:footprint','rowkey','cf:al’
+
+
+
+scan 'stu',{COLUMNS => ['base:weight','base:height']}
+scan 'stu',{COLUMNS => ['base:weight','base:heigth
+
+
+
+scan 'stu',{STARTROW=>'c1_s1',STOPROW=>'c1_s3'}
+scan 'stu',{STARTROW=>'c1_s1',STOPROW=>'c1_s3'}
+
+
+scan 'stu',{ALL_METRICS => true}ROW
+scan 'stu',{ALL_METRICS => true}ROW
+
+
+scan 'stu',{FILTER => "(QualifierFilter (<,'binary:name')) AND (QualifierFilter (=,'substring:jack'))"}
+
+hbase(main):012:0>
+
+
+scan 'stu',{FILTER=>"ColumnPrefixFilter('nam') AND (ValueFilter(=,'substring:1') OR ValueFilter(=,'substring:3'))"}
+
+
+hbase(main):012:0> scan 'stu',{FILTER=>"ColumnPrefixFilter('nam') AND (ValueFilter(=,'substring:1') OR ValueFilter(=,'substring:3'))"}
+
+
+
+create 'people_table','f'
+put 'people_table','id1','f:name','zhangyi'
+put 'people_table','id1','f:age','13'
+put 'people_table','id2','f:name','zhangyi2'
+put 'people_table','id2','f:age','19'
+
+
+
+
+put 'stu','c1_s1','base:name','jack'
+
+
+
+
+
+1、 在公司，推广java-agent日志规范，解决日志打印冗余，查找困难，上报困难，解析困难，通过json 化日志，实现规范的日志报警工作，通过配置文件
+实现日志打印、传输、解析、查找、报警等自动化 提升开发效率，减少问题排查时间，提高业务灵敏度
+2、 实现kun-apm 组件 平台化，docker化，对于简单说查询，通过模块的提供直接查找，提高开发效率，较少重复性工作
+

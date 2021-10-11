@@ -1,0 +1,42 @@
+
+    zookeeper-server-start -daemon /usr/local/etc/kafka/zookeeper.properties & kafka-server-start /usr/local/etc/kafka/server.properties
+
+
+非后台启动
+    zookeeper-server-start -daemon /usr/local/etc/kafka/zookeeper.properties & kafka-server-start /usr/local/etc/kafka/server.properties
+
+后台启动
+    brew services start kafka
+
+创建test topic
+    kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic Shakespeare
+查看 topic
+    kafka-topics --list --zookeeper localhost:2181
+生产者
+    kafka-console-producer --broker-list localhost:9092 --topic Shakespeare
+消费者
+    kafka-console-consumer --bootstrap-server localhost:9092 --topic test --from-beginning
+
+kafka-console-consumer --bootstrap-server localhost:9092 --topic test --consumer.config /usr/local/etc/kafka/consumer.properties
+
+
+关闭kafka
+    kafka-server-stop
+关闭zookeeper
+    zookeeper-server-stop
+
+
+https://blog.csdn.net/weixin_34789114/article/details/108291784
+
+
+
+kafka-consumer-groups --bootstrap-server localhost:9092 --describe --group  test
+
+
+kafka-consumer-groups --bootstrap-server localhost:9092
+
+
+kafka-console-consumer --bootstrap-server master:9092,node01:9092,node02:9092 --new-consumer --consumer-property group.id=test_kafka_game_x_g1 --topic mydemo5
+
+
+
